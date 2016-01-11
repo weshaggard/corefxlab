@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+   <UsingTask TaskName="Microsoft.NuGet.Build.Tasks.ResolveNuGetPackageAssets" AssemblyFile="$(MSBuildExtensionsPath)\Microsoft\Nuget\Microsoft.NuGet.Build.Tasks.dll" />
+
+  <PropertyGroup>
+    <ProjectJson>$(MSBuildThisFileDirectory)project.json</ProjectJson>
+    <ProjectLockJson>$(MSBuildThisFileDirectory)project.lock.json</ProjectLockJson>
+    <PackagesDir>$(MSBuildThisFileDirectory)packages</PackagesDir>
+
+    <NuGetToolPath Condition="'$(NuGetToolPath)'==''">c:\temp\nuget\3.3\NuGet.exe</NuGetToolPath>
+  </PropertyGroup>
+
+  <Target Name="RestoreLibraryPackages">
+    <PropertyGroup>
+      <NugetRestoreCommand>"$(NuGetToolPath)" restore</NugetRestoreCommand>
+      <!-- NuGet.exe doesn't like trailing slashes in the output directory argument -->
+      <NugetRestoreCommand>$(NugetRestoreCommand) -OutputDirectory "$(PackagesDir)"</NugetRestoreCommand>
+      <NugetRestoreCommand>$(NugetRestoreCommand) -Verbosity detailed</NugetRestoreCommand>
+    </PropertyGroup>
+
+    <Exec Command="$(NugetRestoreCommand) $(ProjectJson)" />
+  </Target>
+
+  <Target Name="Build" DependsOnTargets="RestoreLibraryPackages" />
+
+</Project>
