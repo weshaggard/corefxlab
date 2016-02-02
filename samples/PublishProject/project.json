@@ -2,6 +2,11 @@
   "dependencies": {
     "Microsoft.NETCore.Platforms": "1.0.1-beta-23516",
     "Microsoft.NETCore.Portable.Compatibility": "1.0.1-beta-23516",
+    "Microsoft.CSharp": "4.0.1-beta-23516",
+    "Microsoft.VisualBasic": "10.0.1-beta-23516",
+    "Microsoft.Win32.Primitives": "4.0.1-beta-23516",
+    "Microsoft.Win32.Registry": "4.0.0-beta-23516",
+    "Microsoft.Win32.Registry.AccessControl": "4.0.0-beta-23516",
     "System.AppContext": "4.0.1-beta-23516",
     "System.Collections": "4.0.11-beta-23516",
     "System.Collections.Concurrent": "4.0.11-beta-23516",
@@ -120,9 +125,9 @@
   },
 
   "runtimes": {
-    "win10-x64": { },
-    "win10-x86": { },
-    "win10-arm": { }
+    "win8-x64": { },
+    "win8-x86": { },
+    "win8-arm": { }
   },
   "frameworks": {
     "dnxcore50": {
@@ -134,7 +139,7 @@
     },
     "net46": {
       "dependencies": {
-      }        
+      }
     }
   }
 }
