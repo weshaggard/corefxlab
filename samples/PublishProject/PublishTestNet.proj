@@ -5,7 +5,7 @@
   <PropertyGroup>
     <ProjectJson>$(MSBuildThisFileDirectory)project.json</ProjectJson>
     <ProjectLockJson>$(MSBuildThisFileDirectory)project.lock.json</ProjectLockJson>
-    <TargetFrameworkMoniker>DNXCore,Version=v5.0</TargetFrameworkMoniker>
+    <TargetFrameworkMoniker>.NETCoreApp,Version=v1.0</TargetFrameworkMoniker>
     <TargetFrameworkMoniker Condition="'$(IsDesktop)'=='true'">.NETFramework,Version=v4.6</TargetFrameworkMoniker>
     <PackagesDir>$(MSBuildThisFileDirectory)packages</PackagesDir>
 
@@ -18,7 +18,7 @@
     <!-- Only restore reference assemblies once for x86 -->
     <RestoreReferenceAssemblies Condition="'$(TargetArch)' == 'x86' and '$(IsDesktop)'!='true'">true</RestoreReferenceAssemblies>
 
-	<NuGetToolPath Condition="'$(NuGetToolPath)'==''">c:\temp\nuget\3.3\NuGet.exe</NuGetToolPath>
+    <NuGetToolPath Condition="'$(NuGetToolPath)'==''">c:\temp\nuget\3.4\NuGet.exe</NuGetToolPath>
     <SymChkToolPath Condition="'$(SymChkToolPath)'==''">d:\pk\src\tools\x86\symchk.exe</SymChkToolPath>
   </PropertyGroup>
 
