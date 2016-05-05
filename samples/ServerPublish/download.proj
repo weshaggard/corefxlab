@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+   <UsingTask TaskName="Microsoft.NuGet.Build.Tasks.ResolveNuGetPackageAssets" AssemblyFile="$(MSBuildExtensionsPath)\Microsoft\Nuget\Microsoft.NuGet.Build.Tasks.dll" />
+
+  <PropertyGroup>
+    <ProjectJson>$(MSBuildThisFileDirectory)project.json</ProjectJson>
+    <ProjectLockJson>$(MSBuildThisFileDirectory)project.lock.json</ProjectLockJson>
+    <TargetFrameworkMoniker>.NETCoreApp,Version=v1.0</TargetFrameworkMoniker>
+    <TargetFrameworkMoniker Condition="'$(IsDesktop)'=='true'">.NETFramework,Version=v4.6</TargetFrameworkMoniker>
+    <PackagesDir>$(MSBuildThisFileDirectory)packages</PackagesDir>
+
+    <TargetArch Condition="'$(TargetArch)' == ''">x86</TargetArch>
+    <TargetRuntimeIdentifier>win8-$(TargetArch)</TargetRuntimeIdentifier>
+    <RestoredRefPath>$(MSbuildThisFileDirectory)RestoredOutput\ref\</RestoredRefPath>
+    <RestoredLibrariesPath>$(MSbuildThisFileDirectory)RestoredOutput\$(TargetArch)\</RestoredLibrariesPath>
+    <RestoredLibrariesPath Condition="'$(IsDesktop)'=='true'">$(MSbuildThisFileDirectory)RestoredOutput\Deskop\</RestoredLibrariesPath>
+
+    <!-- Only restore reference assemblies once for x86 -->
+    <RestoreReferenceAssemblies Condition="'$(TargetArch)' == 'x86' and '$(IsDesktop)'!='true'">true</RestoreReferenceAssemblies>
+
+    <NuGetToolPath Condition="'$(NuGetToolPath)'==''">c:\temp\nuget\3.4\NuGet.exe</NuGetToolPath>
+    <SymChkToolPath Condition="'$(SymChkToolPath)'==''">d:\pk\src\tools\x86\symchk.exe</SymChkToolPath>
+  </PropertyGroup>
+
+  <Target Name="RestoreLibraryPackages">
+	  <PropertyGroup>
+	    <NugetRestoreCommand>"$(NuGetToolPath)" restore</NugetRestoreCommand>
+	    <!-- NuGet.exe doesn't like trailing slashes in the output directory argument -->
+	    <NugetRestoreCommand>$(NugetRestoreCommand) -OutputDirectory "$(PackagesDir)"</NugetRestoreCommand>
+	    <NugetRestoreCommand>$(NugetRestoreCommand) -Verbosity detailed</NugetRestoreCommand>
+      <NugetRestoreCommand>$(NugetRestoreCommand) -ConfigFile Nuget.Config</NugetRestoreCommand>
+	  </PropertyGroup>
+
+	<Exec Command="$(NugetRestoreCommand) $(ProjectJson)" />
+  </Target>
+
+  <Target Name="PublishLibraries">
+    <ResolveNuGetPackageAssets
+         IncludeFrameworkReferences="false"
+         NuGetPackagesDirectory="$(PackagesDir)"
+         RuntimeIdentifier="$(TargetRuntimeIdentifier)"
+         ProjectLockFile="$(ProjectLockJson)"
+         TargetMonikers="$(TargetFrameworkMoniker)">
+
+      <Output TaskParameter="ResolvedCopyLocalItems" ItemName="ResolvedCopyLocalItems" />
+      <Output TaskParameter="ResolvedReferences" ItemName="ResolvedReferences" />
+    </ResolveNuGetPackageAssets>
+
+    <!-- ResolvedCopyLocalItems corresponds to "runtime" and "native" files in the framework packages -->
+    <Copy SourceFiles="@(ResolvedCopyLocalItems)" DestinationFolder="$(RestoredLibrariesPath)" />
+
+    <!-- ResolvedReferences corresponds to library contracts -->
+    <Copy SourceFiles="@(ResolvedReferences)" DestinationFolder="$(RestoredRefPath)" Condition="'$(RestoreReferenceAssemblies)' == 'true'" />
+  </Target>
+
+  <Target Name="PublishSymbols" DependsOnTargets="PublishLibraries">
+    <PropertyGroup>
+      <SymbolPath>srv*D:\SymbolCache\*http://symweb</SymbolPath>
+      <!-- We use the SymChk tool to restore symbols from a symbol server for restored libraries -->
+      <SymChkCommand>$(SymChkToolPath)</SymChkCommand>
+      <SymChkCommand>$(SymChkCommand) /s $(SymbolPath)</SymChkCommand>
+      <SymChkCommand>$(SymChkCommand) /oc $(RestoredLibrariesPath)</SymChkCommand>
+      <SymChkCommand>$(SymChkCommand) /if $(RestoredLibrariesPath)*.dll</SymChkCommand>
+    </PropertyGroup>
+
+    <Exec Command="$(SymChkCommand)" />
+
+  </Target>
+
+  <Target Name="Build" DependsOnTargets="RestoreLibraryPackages;PublishLibraries;PublishSymbols" />
+
+</Project>
