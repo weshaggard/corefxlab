@@ -7,7 +7,14 @@
     <ProjectLockJson>$(MSBuildThisFileDirectory)project.lock.json</ProjectLockJson>
     <PackagesDir>$(MSBuildThisFileDirectory)packages</PackagesDir>
 
-    <NuGetToolPath Condition="'$(NuGetToolPath)'==''">c:\temp\nuget\3.3\NuGet.exe</NuGetToolPath>
+    <TargetFrameworkMoniker>UAP,Version=v10.0</TargetFrameworkMoniker>
+    <TargetArch Condition="'$(TargetArch)' == ''">x86</TargetArch>
+    <TargetRuntimeIdentifier>win10-$(TargetArch)</TargetRuntimeIdentifier>
+    <TargetRuntimeIdentifier Condition="'$(IsNetNative)' == 'true'">win10-$(TargetArch)-aot</TargetRuntimeIdentifier>
+    <RestoredLibrariesPath>$(MSbuildThisFileDirectory)RestoredOutput\$(TargetRuntimeIdentifier)\</RestoredLibrariesPath>
+
+    <NuGetToolPath Condition="'$(NuGetToolPath)'==''">c:\temp\nuget\3.4\NuGet.exe</NuGetToolPath>
+    <SymChkToolPath Condition="'$(SymChkToolPath)'==''">d:\pk\src\tools\x86\symchk.exe</SymChkToolPath>
   </PropertyGroup>
 
   <Target Name="RestoreLibraryPackages">
@@ -21,6 +28,36 @@
     <Exec Command="$(NugetRestoreCommand) $(ProjectJson)" />
   </Target>
 
-  <Target Name="Build" DependsOnTargets="RestoreLibraryPackages" />
+  <Target Name="PublishLibraries">
+    <ResolveNuGetPackageAssets
+         IncludeFrameworkReferences="false"
+         NuGetPackagesDirectory="$(PackagesDir)"
+         RuntimeIdentifier="$(TargetRuntimeIdentifier)"
+         ProjectLockFile="$(ProjectLockJson)"
+         TargetMonikers="$(TargetFrameworkMoniker)">
+
+      <Output TaskParameter="ResolvedCopyLocalItems" ItemName="ResolvedCopyLocalItems" />
+      <Output TaskParameter="ResolvedReferences" ItemName="ResolvedReferences" />
+    </ResolveNuGetPackageAssets>
+
+    <!-- ResolvedCopyLocalItems corresponds to "runtime" and "native" files in the framework packages -->
+    <Copy SourceFiles="@(ResolvedCopyLocalItems)" DestinationFolder="$(RestoredLibrariesPath)" />
+
+  </Target>
+
+  <Target Name="PublishSymbols" DependsOnTargets="PublishLibraries">
+    <PropertyGroup>
+      <SymbolPath>srv*D:\SymbolCache\*http://symweb</SymbolPath>
+      <!-- We use the SymChk tool to restore symbols from a symbol server for restored libraries -->
+      <SymChkCommand>$(SymChkToolPath)</SymChkCommand>
+      <SymChkCommand>$(SymChkCommand) /s $(SymbolPath)</SymChkCommand>
+      <SymChkCommand>$(SymChkCommand) /oc $(RestoredLibrariesPath)</SymChkCommand>
+      <SymChkCommand>$(SymChkCommand) /if $(RestoredLibrariesPath)*.dll</SymChkCommand>
+    </PropertyGroup>
+
+    <Exec Command="$(SymChkCommand)" />
+  </Target>
+
+  <Target Name="Build" DependsOnTargets="RestoreLibraryPackages;PublishLibraries;PublishSymbols" />
 
 </Project>
