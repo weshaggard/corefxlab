@@ -13,8 +13,8 @@
     <TargetRuntimeIdentifier Condition="'$(IsNetNative)' == 'true'">win10-$(TargetArch)-aot</TargetRuntimeIdentifier>
     <RestoredLibrariesPath>$(MSbuildThisFileDirectory)RestoredOutput\$(TargetRuntimeIdentifier)\</RestoredLibrariesPath>
 
-    <NuGetToolPath Condition="'$(NuGetToolPath)'==''">c:\temp\nuget\3.4\NuGet.exe</NuGetToolPath>
-    <SymChkToolPath Condition="'$(SymChkToolPath)'==''">d:\pk\src\tools\x86\symchk.exe</SymChkToolPath>
+    <NuGetToolPath Condition="'$(NuGetToolPath)'==''">$(MSBuildThisFileDirectory)NuGet.exe</NuGetToolPath>
+    <SymChkToolPath Condition="'$(SymChkToolPath)'==''">$(MSBuildThisFileDirectory)symchk.exe</SymChkToolPath>
   </PropertyGroup>
 
   <Target Name="RestoreLibraryPackages">
