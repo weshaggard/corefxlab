@@ -5,7 +5,7 @@ param (
     [String] $Path = ".\_DotNetCore10",
 
     [ValidateNotNullOrEmpty()]
-    [string] $NugetExe = "c:\temp\nuget\3.4\nuget.exe",
+    [string] $NugetExe = "c:\temp\nuget\3.5\nuget.exe",
 
     [ValidateNotNullOrEmpty()]
     [string] $SymchkExe = "d:\pk\src\tools\x86\symchk.exe"
