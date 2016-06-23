@@ -1,6 +1,14 @@
 ﻿{
   "dependencies": {
-    "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.0"
+    "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.0",
+    "runtime.win7-x64.Microsoft.NETCore.Jit": {
+      "version": "1.0.2",
+      "exclude": "native"
+    },
+    "runtime.win7-x86.Microsoft.NETCore.Jit": {
+      "version": "1.0.2",
+      "exclude": "native"
+    }
   },
   "frameworks": {
     "uap10.0": {}
