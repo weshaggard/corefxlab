@@ -15637,7 +15637,7 @@
       ]
     },
     "Microsoft.NETCore/5.0.1": {
-      "sha512": "o+2ZTDctzwS11Z/rC2+6EtdYfH2lsKcaSw3zqfF3NtCYkxQ9pFdkzYxLoIDBFqzs1bUmvFgZpOBlpBuvybJxXA==",
+      "sha512": "690LNg2rIuV7pwK0aUcnkzjwEceh1HYm5+oqVFjmEaSIMCVQj3sj/1N93mgq0ZlFX1kjx1ADhxYicHXVqKIV8Q==",
       "type": "package",
       "files": [
         "Microsoft.NETCore.5.0.1.nupkg.sha512",
@@ -15774,7 +15774,7 @@
       ]
     },
     "Microsoft.NETCore.UniversalWindowsPlatform/5.2.0": {
-      "sha512": "SQwTtKNJGYN4gYv1PuVoN0RK2xadwj08uwh76vBLVJIG7w89euJAifZloRGwhG9rOnJIUl8y2ZvWGPbzJB3IWg==",
+      "sha512": "SPgMJUQ2z1lsXJqQ948iyKHgi0ahKt3fxM7TOaKhHpiKiPFdzrVsoH+3ElXmewGd4m7xXZTNXtnoSsjWzGHgWw==",
       "type": "package",
       "files": [
         "Microsoft.NETCore.UniversalWindowsPlatform.5.2.0.nupkg.sha512",
@@ -21507,8 +21507,10 @@
   },
   "projectFileDependencyGroups": {
     "": [
-      "Microsoft.NETCore.UniversalWindowsPlatform >= 5.2.0-rc3-*"
+      "Microsoft.NETCore.UniversalWindowsPlatform >= 5.2.0"
     ],
     "UAP,Version=v10.0": []
-  }
+  },
+  "tools": {},
+  "projectFileToolGroups": {}
 }
