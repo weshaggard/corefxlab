@@ -528,13 +528,13 @@
           "Microsoft.NETCore.Platforms": "1.0.1"
         },
         "compile": {
-          "ref/netstandard1.3/System.Diagnostics.StackTrace.dll": {}
+          "ref/netstandard1.3/_._": {}
         },
         "runtime": {
-          "lib/netstandard1.3/System.Diagnostics.StackTrace.dll": {}
+          "lib/netstandard1.3/_._": {}
         },
         "runtimeTargets": {
-          "runtimes/aot/lib/netcore50/System.Diagnostics.StackTrace.dll": {
+          "runtimes/aot/lib/netcore50/_._": {
             "assetType": "runtime",
             "rid": "aot"
           }
@@ -2889,10 +2889,10 @@
           "Microsoft.NETCore.Platforms": "1.0.1"
         },
         "compile": {
-          "ref/netstandard1.3/System.Diagnostics.StackTrace.dll": {}
+          "ref/netstandard1.3/_._": {}
         },
         "runtime": {
-          "lib/netstandard1.3/System.Diagnostics.StackTrace.dll": {}
+          "lib/netstandard1.3/_._": {}
         }
       },
       "System.Diagnostics.Tools/4.0.1": {
@@ -5150,10 +5150,10 @@
           "Microsoft.NETCore.Platforms": "1.0.1"
         },
         "compile": {
-          "ref/netstandard1.3/System.Diagnostics.StackTrace.dll": {}
+          "ref/netstandard1.3/_._": {}
         },
         "runtime": {
-          "runtimes/aot/lib/netcore50/System.Diagnostics.StackTrace.dll": {}
+          "runtimes/aot/lib/netcore50/_._": {}
         }
       },
       "System.Diagnostics.Tools/4.0.1": {
@@ -7381,10 +7381,10 @@
           "Microsoft.NETCore.Platforms": "1.0.1"
         },
         "compile": {
-          "ref/netstandard1.3/System.Diagnostics.StackTrace.dll": {}
+          "ref/netstandard1.3/_._": {}
         },
         "runtime": {
-          "lib/netstandard1.3/System.Diagnostics.StackTrace.dll": {}
+          "lib/netstandard1.3/_._": {}
         }
       },
       "System.Diagnostics.Tools/4.0.1": {
@@ -9648,10 +9648,10 @@
           "Microsoft.NETCore.Platforms": "1.0.1"
         },
         "compile": {
-          "ref/netstandard1.3/System.Diagnostics.StackTrace.dll": {}
+          "ref/netstandard1.3/_._": {}
         },
         "runtime": {
-          "runtimes/aot/lib/netcore50/System.Diagnostics.StackTrace.dll": {}
+          "runtimes/aot/lib/netcore50/_._": {}
         }
       },
       "System.Diagnostics.Tools/4.0.1": {
@@ -11879,10 +11879,10 @@
           "Microsoft.NETCore.Platforms": "1.0.1"
         },
         "compile": {
-          "ref/netstandard1.3/System.Diagnostics.StackTrace.dll": {}
+          "ref/netstandard1.3/_._": {}
         },
         "runtime": {
-          "lib/netstandard1.3/System.Diagnostics.StackTrace.dll": {}
+          "lib/netstandard1.3/_._": {}
         }
       },
       "System.Diagnostics.Tools/4.0.1": {
@@ -14146,10 +14146,10 @@
           "Microsoft.NETCore.Platforms": "1.0.1"
         },
         "compile": {
-          "ref/netstandard1.3/System.Diagnostics.StackTrace.dll": {}
+          "ref/netstandard1.3/_._": {}
         },
         "runtime": {
-          "runtimes/aot/lib/netcore50/System.Diagnostics.StackTrace.dll": {}
+          "runtimes/aot/lib/netcore50/_._": {}
         }
       },
       "System.Diagnostics.Tools/4.0.1": {
@@ -15680,9 +15680,8 @@
       ]
     },
     "Microsoft.NETCore/5.0.1": {
-      "sha512": "1uKXBZf8zti7KJdewdIiQKeYWFuE2uH/tbGUveUIJ4f5xNMj7Qw22iF5lEyJyk9EplBJR45El2JlFznGFXkwyQ==",
+      "sha512": "690LNg2rIuV7pwK0aUcnkzjwEceh1HYm5+oqVFjmEaSIMCVQj3sj/1N93mgq0ZlFX1kjx1ADhxYicHXVqKIV8Q==",
       "type": "package",
-      "path": "Microsoft.NETCore/5.0.1",
       "files": [
         "Microsoft.NETCore.5.0.1.nupkg.sha512",
         "Microsoft.NETCore.nuspec",
@@ -15823,9 +15822,8 @@
       ]
     },
     "Microsoft.NETCore.UniversalWindowsPlatform/5.2.0": {
-      "sha512": "ysC0eTWxvAr0OpXqhQVYoiYnylsp/lAvL8Qp0lE6NJKaguifbCrP2J49WTWrjvayCl6YviH35hIk0EcjX8yrWg==",
+      "sha512": "SPgMJUQ2z1lsXJqQ948iyKHgi0ahKt3fxM7TOaKhHpiKiPFdzrVsoH+3ElXmewGd4m7xXZTNXtnoSsjWzGHgWw==",
       "type": "package",
-      "path": "Microsoft.NETCore.UniversalWindowsPlatform/5.2.0",
       "files": [
         "Microsoft.NETCore.UniversalWindowsPlatform.5.2.0.nupkg.sha512",
         "Microsoft.NETCore.UniversalWindowsPlatform.nuspec",
@@ -21705,6 +21703,7 @@
   "projectFileDependencyGroups": {
     "": [
       "Microsoft.NETCore.UniversalWindowsPlatform >= 5.2.0",
+      "System.Diagnostics.StackTrace >= 4.0.1",
       "runtime.win7-x64.Microsoft.NETCore.Jit >= 1.0.2",
       "runtime.win7-x86.Microsoft.NETCore.Jit >= 1.0.2"
     ],
