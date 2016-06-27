@@ -14,6 +14,7 @@
     <RestoredLibrariesPath>$(MSbuildThisFileDirectory)RestoredOutput\$(TargetRuntimeIdentifier)\</RestoredLibrariesPath>
 
     <NuGetToolPath Condition="'$(NuGetToolPath)'==''">$(MSBuildThisFileDirectory)\Bin\NuGet.exe</NuGetToolPath>
+    <SymChkToolPath Condition="'$(SymChkToolPath)'=='' and Exists('C:\debuggers\symchk.exe')">C:\debuggers\symchk.exe</SymChkToolPath>
     <SymChkToolPath Condition="'$(SymChkToolPath)'==''">$(MSBuildThisFileDirectory)\Bin\symchk.exe</SymChkToolPath>
   </PropertyGroup>
 
@@ -51,6 +52,7 @@
       <!-- We use the SymChk tool to restore symbols from a symbol server for restored libraries -->
       <SymChkCommand>$(SymChkToolPath)</SymChkCommand>
       <SymChkCommand>$(SymChkCommand) /s $(SymbolPath)</SymChkCommand>
+      <SymChkCommand>$(SymChkCommand) /v $(SymbolPath)</SymChkCommand>
       <SymChkCommand>$(SymChkCommand) /oc $(RestoredLibrariesPath)</SymChkCommand>
       <SymChkCommand>$(SymChkCommand) /if $(RestoredLibrariesPath)*.dll</SymChkCommand>
     </PropertyGroup>

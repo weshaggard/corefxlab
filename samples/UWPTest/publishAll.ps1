@@ -32,9 +32,12 @@ do
 } while ($true)
 
 
-# Get SymbolCheck
-Copy-Item -Path $symchkPath\symchk.exe -Destination "$localBinFolderPath\symchk.exe" -Force -ErrorAction Continue
-Copy-Item -Path "$symchkPath\SymbolCheck.dll" -Destination "$localBinFolderPath\SymbolCheck.dll" -Force -ErrorAction Continue
+if (!(Test-Path "c:\debuggers\symchk.exe"))
+{
+    # Get SymbolCheck
+    Copy-Item -Path $symchkPath\symchk.exe -Destination "$localBinFolderPath\symchk.exe" -Force -ErrorAction Continue
+    Copy-Item -Path "$symchkPath\SymbolCheck.dll" -Destination "$localBinFolderPath\SymbolCheck.dll" -Force -ErrorAction Continue
+}
 
 # Get MSBuild
 Copy-Item -Path $msBuildBinFolderPath\* -Destination $localBinFolderPath -Recurse -Force
@@ -57,6 +60,6 @@ foreach ($targetArch in $targetArchs)
     $p = Start-Process -FilePath $msBuildPath -ArgumentList $msBuildArgs -PassThru -Verbose -Wait -ErrorAction Continue
     if ($p.ExitCode -ne 1)
     {
-        Write-Warning "Error occurred while running MSBuild with the following argument $msBuildArgs.  See $currentWorkingDirectory\BuildLog.txt for mode details."
+        Write-Warning "Error occurred while running MSBuild with the following argument $msBuildArgs.  See $currentWorkingDirectory\BuildLog.txt for more details."
     }
 }
