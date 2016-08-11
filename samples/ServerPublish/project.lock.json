@@ -30,7 +30,7 @@
           "lib/netstandard1.3/Microsoft.CSharp.dll": {}
         }
       },
-      "Microsoft.NETCore.Jit/1.0.2": {
+      "Microsoft.NETCore.Jit/1.0.4": {
         "type": "package"
       },
       "Microsoft.NETCore.Platforms/1.0.1": {
@@ -77,10 +77,10 @@
           "lib/netstandard1.0/System.dll": {}
         }
       },
-      "Microsoft.NETCore.Runtime.CoreCLR/1.0.2": {
+      "Microsoft.NETCore.Runtime.CoreCLR/1.0.4": {
         "type": "package",
         "dependencies": {
-          "Microsoft.NETCore.Jit": "1.0.2",
+          "Microsoft.NETCore.Jit": "1.0.4",
           "Microsoft.NETCore.Windows.ApiSets": "1.0.1"
         }
       },
@@ -324,70 +324,6 @@
           "runtimes/win7-x86/native/sni.dll": {
             "assetType": "native",
             "rid": "win7-x86"
-          }
-        }
-      },
-      "runtime.win8-arm.Microsoft.NETCore.Runtime.CoreCLR/1.0.2": {
-        "type": "package",
-        "compile": {
-          "ref/netstandard1.0/_._": {}
-        },
-        "runtimeTargets": {
-          "runtimes/win8-arm-aot/lib/netstandard1.0/_._": {
-            "assetType": "runtime",
-            "rid": "win8-arm-aot"
-          },
-          "runtimes/win8-arm-aot/native/_._": {
-            "assetType": "native",
-            "rid": "win8-arm-aot"
-          },
-          "runtimes/win8-arm/lib/netstandard1.0/System.Private.CoreLib.dll": {
-            "assetType": "runtime",
-            "rid": "win8-arm"
-          },
-          "runtimes/win8-arm/lib/netstandard1.0/mscorlib.dll": {
-            "assetType": "runtime",
-            "rid": "win8-arm"
-          },
-          "runtimes/win8-arm/native/System.Private.CoreLib.ni.dll": {
-            "assetType": "native",
-            "rid": "win8-arm"
-          },
-          "runtimes/win8-arm/native/clretwrc.dll": {
-            "assetType": "native",
-            "rid": "win8-arm"
-          },
-          "runtimes/win8-arm/native/coreclr.dll": {
-            "assetType": "native",
-            "rid": "win8-arm"
-          },
-          "runtimes/win8-arm/native/dbgshim.dll": {
-            "assetType": "native",
-            "rid": "win8-arm"
-          },
-          "runtimes/win8-arm/native/mscordaccore.dll": {
-            "assetType": "native",
-            "rid": "win8-arm"
-          },
-          "runtimes/win8-arm/native/mscordbi.dll": {
-            "assetType": "native",
-            "rid": "win8-arm"
-          },
-          "runtimes/win8-arm/native/mscorlib.ni.dll": {
-            "assetType": "native",
-            "rid": "win8-arm"
-          },
-          "runtimes/win8-arm/native/mscorrc.debug.dll": {
-            "assetType": "native",
-            "rid": "win8-arm"
-          },
-          "runtimes/win8-arm/native/mscorrc.dll": {
-            "assetType": "native",
-            "rid": "win8-arm"
-          },
-          "runtimes/win8-arm/native/sos.dll": {
-            "assetType": "native",
-            "rid": "win8-arm"
           }
         }
       },
@@ -2263,7 +2199,7 @@
           "System.Text.Encoding": "4.0.11"
         },
         "compile": {
-          "ref/netstandard1.6/_._": {}
+          "ref/netstandard1.6/System.Security.Cryptography.Cng.dll": {}
         },
         "runtimeTargets": {
           "runtimes/unix/lib/netstandard1.6/System.Security.Cryptography.Cng.dll": {
@@ -3053,7 +2989,7 @@
           "lib/netstandard1.3/Microsoft.CSharp.dll": {}
         }
       },
-      "Microsoft.NETCore.Jit/1.0.2": {
+      "Microsoft.NETCore.Jit/1.0.4": {
         "type": "package"
       },
       "Microsoft.NETCore.Platforms/1.0.1": {
@@ -3100,12 +3036,12 @@
           "lib/netstandard1.0/System.dll": {}
         }
       },
-      "Microsoft.NETCore.Runtime.CoreCLR/1.0.2": {
+      "Microsoft.NETCore.Runtime.CoreCLR/1.0.4": {
         "type": "package",
         "dependencies": {
-          "Microsoft.NETCore.Jit": "1.0.2",
+          "Microsoft.NETCore.Jit": "1.0.4",
           "Microsoft.NETCore.Windows.ApiSets": "1.0.1",
-          "runtime.win8-arm.Microsoft.NETCore.Runtime.CoreCLR": "1.0.2-rc3-24212-01"
+          "runtime.win8-arm.Microsoft.NETCore.Runtime.CoreCLR": "1.0.4"
         }
       },
       "Microsoft.NETCore.Targets/1.0.1": {
@@ -3623,7 +3559,7 @@
           "runtimes/win/lib/netstandard1.0/System.Private.Uri.dll": {}
         }
       },
-      "runtime.win8-arm.Microsoft.NETCore.Runtime.CoreCLR/1.0.2": {
+      "runtime.win8-arm.Microsoft.NETCore.Runtime.CoreCLR/1.0.4": {
         "type": "package",
         "compile": {
           "ref/netstandard1.0/_._": {}
@@ -5368,7 +5304,7 @@
           "System.Text.Encoding": "4.0.11"
         },
         "compile": {
-          "ref/netstandard1.6/_._": {}
+          "ref/netstandard1.6/System.Security.Cryptography.Cng.dll": {}
         },
         "runtime": {
           "runtimes/win/lib/netstandard1.6/System.Security.Cryptography.Cng.dll": {}
@@ -6086,10 +6022,10 @@
           "lib/netstandard1.3/Microsoft.CSharp.dll": {}
         }
       },
-      "Microsoft.NETCore.Jit/1.0.2": {
+      "Microsoft.NETCore.Jit/1.0.4": {
         "type": "package",
         "dependencies": {
-          "runtime.win7-x64.Microsoft.NETCore.Jit": "1.0.2"
+          "runtime.win7-x64.Microsoft.NETCore.Jit": "1.0.4"
         }
       },
       "Microsoft.NETCore.Platforms/1.0.1": {
@@ -6136,12 +6072,12 @@
           "lib/netstandard1.0/System.dll": {}
         }
       },
-      "Microsoft.NETCore.Runtime.CoreCLR/1.0.2": {
+      "Microsoft.NETCore.Runtime.CoreCLR/1.0.4": {
         "type": "package",
         "dependencies": {
-          "Microsoft.NETCore.Jit": "1.0.2",
+          "Microsoft.NETCore.Jit": "1.0.4",
           "Microsoft.NETCore.Windows.ApiSets": "1.0.1",
-          "runtime.win7-x64.Microsoft.NETCore.Runtime.CoreCLR": "1.0.2"
+          "runtime.win7-x64.Microsoft.NETCore.Runtime.CoreCLR": "1.0.4"
         }
       },
       "Microsoft.NETCore.Targets/1.0.1": {
@@ -6650,13 +6586,13 @@
           "runtimes/win/lib/netstandard1.5/System.Runtime.Extensions.dll": {}
         }
       },
-      "runtime.win7-x64.Microsoft.NETCore.Jit/1.0.2": {
+      "runtime.win7-x64.Microsoft.NETCore.Jit/1.0.4": {
         "type": "package",
         "native": {
           "runtimes/win7-x64/native/clrjit.dll": {}
         }
       },
-      "runtime.win7-x64.Microsoft.NETCore.Runtime.CoreCLR/1.0.2": {
+      "runtime.win7-x64.Microsoft.NETCore.Runtime.CoreCLR/1.0.4": {
         "type": "package",
         "compile": {
           "ref/netstandard1.0/_._": {}
@@ -6706,12 +6642,6 @@
         },
         "runtime": {
           "runtimes/win/lib/netstandard1.0/System.Private.Uri.dll": {}
-        }
-      },
-      "runtime.win8-arm.Microsoft.NETCore.Runtime.CoreCLR/1.0.2": {
-        "type": "package",
-        "compile": {
-          "ref/netstandard1.0/_._": {}
         }
       },
       "runtime.win8-x64.Microsoft.NETCore.Windows.ApiSets/1.0.1": {
@@ -8434,7 +8364,7 @@
           "System.Text.Encoding": "4.0.11"
         },
         "compile": {
-          "ref/netstandard1.6/_._": {}
+          "ref/netstandard1.6/System.Security.Cryptography.Cng.dll": {}
         },
         "runtime": {
           "runtimes/win/lib/netstandard1.6/System.Security.Cryptography.Cng.dll": {}
@@ -9152,10 +9082,10 @@
           "lib/netstandard1.3/Microsoft.CSharp.dll": {}
         }
       },
-      "Microsoft.NETCore.Jit/1.0.2": {
+      "Microsoft.NETCore.Jit/1.0.4": {
         "type": "package",
         "dependencies": {
-          "runtime.win7-x86.Microsoft.NETCore.Jit": "1.0.2"
+          "runtime.win7-x86.Microsoft.NETCore.Jit": "1.0.4"
         }
       },
       "Microsoft.NETCore.Platforms/1.0.1": {
@@ -9202,12 +9132,12 @@
           "lib/netstandard1.0/System.dll": {}
         }
       },
-      "Microsoft.NETCore.Runtime.CoreCLR/1.0.2": {
+      "Microsoft.NETCore.Runtime.CoreCLR/1.0.4": {
         "type": "package",
         "dependencies": {
-          "Microsoft.NETCore.Jit": "1.0.2",
+          "Microsoft.NETCore.Jit": "1.0.4",
           "Microsoft.NETCore.Windows.ApiSets": "1.0.1",
-          "runtime.win7-x86.Microsoft.NETCore.Runtime.CoreCLR": "1.0.2"
+          "runtime.win7-x86.Microsoft.NETCore.Runtime.CoreCLR": "1.0.4"
         }
       },
       "Microsoft.NETCore.Targets/1.0.1": {
@@ -9719,13 +9649,13 @@
       "runtime.win7-x64.runtime.native.System.Data.SqlClient.sni/4.0.1": {
         "type": "package"
       },
-      "runtime.win7-x86.Microsoft.NETCore.Jit/1.0.2": {
+      "runtime.win7-x86.Microsoft.NETCore.Jit/1.0.4": {
         "type": "package",
         "native": {
           "runtimes/win7-x86/native/clrjit.dll": {}
         }
       },
-      "runtime.win7-x86.Microsoft.NETCore.Runtime.CoreCLR/1.0.2": {
+      "runtime.win7-x86.Microsoft.NETCore.Runtime.CoreCLR/1.0.4": {
         "type": "package",
         "compile": {
           "ref/netstandard1.0/_._": {}
@@ -9772,12 +9702,6 @@
         },
         "runtime": {
           "runtimes/win/lib/netstandard1.0/System.Private.Uri.dll": {}
-        }
-      },
-      "runtime.win8-arm.Microsoft.NETCore.Runtime.CoreCLR/1.0.2": {
-        "type": "package",
-        "compile": {
-          "ref/netstandard1.0/_._": {}
         }
       },
       "runtime.win8-x64.Microsoft.NETCore.Windows.ApiSets/1.0.1": {
@@ -11500,7 +11424,7 @@
           "System.Text.Encoding": "4.0.11"
         },
         "compile": {
-          "ref/netstandard1.6/_._": {}
+          "ref/netstandard1.6/System.Security.Cryptography.Cng.dll": {}
         },
         "runtime": {
           "runtimes/win/lib/netstandard1.6/System.Security.Cryptography.Cng.dll": {}
@@ -12249,14 +12173,14 @@
         "ref/xamarinwatchos10/_._"
       ]
     },
-    "Microsoft.NETCore.Jit/1.0.2": {
-      "sha512": "Ok2vWofa6X8WD9vc4pfLHwvJz1/B6t3gOAoZcjrjrQf7lQOlNIuZIZtLn3wnWX28DuQGpPJkRlBxFj7Z5txNqw==",
+    "Microsoft.NETCore.Jit/1.0.4": {
+      "sha512": "s336ryZlopR+pQ4VfKlILX1LxiQzpCPnmiGot0p5aFPeCjwmKtHC88MI8jXdvdGPySON9i1bPUKJP8jiiPIAjA==",
       "type": "package",
-      "path": "microsoft.netcore.jit/1.0.2",
+      "path": "microsoft.netcore.jit/1.0.4",
       "files": [
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
-        "microsoft.netcore.jit.1.0.2.nupkg.sha512",
+        "microsoft.netcore.jit.1.0.4.nupkg.sha512",
         "microsoft.netcore.jit.nuspec",
         "runtime.json"
       ]
@@ -12356,14 +12280,14 @@
         "runtimes/aot/lib/netcore50/mscorlib.dll"
       ]
     },
-    "Microsoft.NETCore.Runtime.CoreCLR/1.0.2": {
-      "sha512": "A0x1xtTjYJWZr2DRzgfCOXgB0JkQg8twnmtTJ79wFje+IihlLbXtx6Z2AxyVokBM5ruwTedR6YdCmHk39QJdtQ==",
+    "Microsoft.NETCore.Runtime.CoreCLR/1.0.4": {
+      "sha512": "NTd+F7MQJi5wFh6Hq3uVH0L3om+pVcfF+bpw0hSd+Ka92QSZ4IfDJw/IWqTQ9jUtLyWYR4XR+52HD5HW+a+zoQ==",
       "type": "package",
-      "path": "microsoft.netcore.runtime.coreclr/1.0.2",
+      "path": "microsoft.netcore.runtime.coreclr/1.0.4",
       "files": [
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
-        "microsoft.netcore.runtime.coreclr.1.0.2.nupkg.sha512",
+        "microsoft.netcore.runtime.coreclr.1.0.4.nupkg.sha512",
         "microsoft.netcore.runtime.coreclr.nuspec",
         "runtime.json"
       ]
@@ -13148,27 +13072,28 @@
         "runtimes/win/lib/netstandard1.5/System.Runtime.Extensions.dll"
       ]
     },
-    "runtime.win7-x64.Microsoft.NETCore.Jit/1.0.2": {
-      "sha512": "Jd3q9BKO+Sun6mPXRvHZMYG0WJmnASjXUxsT5MJwBoz8xbeZRTuFTPD5RtNlKxxioCiWR/hp3mKgYjlJ4dLQsw==",
+    "runtime.win7-x64.Microsoft.NETCore.Jit/1.0.4": {
+      "sha512": "x5CokVDl/gul8A3mfzyvJr+YvDNByTn/XTh3V4QT46EXjFfF45jDBrwRdRCLyIIp05Or5w9GkU+yjXRFnPO85w==",
       "type": "package",
-      "path": "runtime.win7-x64.microsoft.netcore.jit/1.0.2",
+      "path": "runtime.win7-x64.microsoft.netcore.jit/1.0.4",
       "files": [
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
-        "runtime.win7-x64.microsoft.netcore.jit.1.0.2.nupkg.sha512",
+        "runtime.win7-x64.microsoft.netcore.jit.1.0.4.nupkg.sha512",
         "runtime.win7-x64.microsoft.netcore.jit.nuspec",
+        "runtimes/win7-x64-aot/native/_._",
         "runtimes/win7-x64/native/clrjit.dll"
       ]
     },
-    "runtime.win7-x64.Microsoft.NETCore.Runtime.CoreCLR/1.0.2": {
-      "sha512": "YaXA5RVLCYIcV1N31A7MJhWJnNkNfGnyRBNH1yYilUrBDvzMxNsbXX2pD7owWsC/go/4LRwbHbdWWXwHowKNvw==",
+    "runtime.win7-x64.Microsoft.NETCore.Runtime.CoreCLR/1.0.4": {
+      "sha512": "xk70lt1wyb5Elwc+BaOVWfcFms4W8njKwUIDCeOC3xGPFVdEdME4F1cl5u/XZUrKqxamgQCAEjo+VypNQWnQ9A==",
       "type": "package",
-      "path": "runtime.win7-x64.microsoft.netcore.runtime.coreclr/1.0.2",
+      "path": "runtime.win7-x64.microsoft.netcore.runtime.coreclr/1.0.4",
       "files": [
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "ref/netstandard1.0/_._",
-        "runtime.win7-x64.microsoft.netcore.runtime.coreclr.1.0.2.nupkg.sha512",
+        "runtime.win7-x64.microsoft.netcore.runtime.coreclr.1.0.4.nupkg.sha512",
         "runtime.win7-x64.microsoft.netcore.runtime.coreclr.nuspec",
         "runtimes/win7-x64-aot/lib/netstandard1.0/_._",
         "runtimes/win7-x64-aot/native/_._",
@@ -13223,27 +13148,28 @@
         "runtimes/win7-x64/native/clrcompression.dll"
       ]
     },
-    "runtime.win7-x86.Microsoft.NETCore.Jit/1.0.2": {
-      "sha512": "DEDFKUREtfMZue7qIGNelkZqay6bpC1iTWt/ZFQ0yxnqtINXmVYiOW9ML7w/1E4WBUaPCUo4tKWasK53c063qg==",
+    "runtime.win7-x86.Microsoft.NETCore.Jit/1.0.4": {
+      "sha512": "vvSkSBR+eph2yiDdItyRBl0kQJrnBbqWE7eEisjPMB58P0jNFppPLKWylsOSyjYFcpji0uPNIWKz+lxXk/0iiA==",
       "type": "package",
-      "path": "runtime.win7-x86.microsoft.netcore.jit/1.0.2",
+      "path": "runtime.win7-x86.microsoft.netcore.jit/1.0.4",
       "files": [
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
-        "runtime.win7-x86.microsoft.netcore.jit.1.0.2.nupkg.sha512",
+        "runtime.win7-x86.microsoft.netcore.jit.1.0.4.nupkg.sha512",
         "runtime.win7-x86.microsoft.netcore.jit.nuspec",
+        "runtimes/win7-x86-aot/native/_._",
         "runtimes/win7-x86/native/clrjit.dll"
       ]
     },
-    "runtime.win7-x86.Microsoft.NETCore.Runtime.CoreCLR/1.0.2": {
-      "sha512": "80Jj8QlMLAnTq+BDhoHBnSNXRKqVjjZM9VjHcpw9/F98cBmh80rBdbnM0AAr54htjhzupYvwLqwuKnlzxec04A==",
+    "runtime.win7-x86.Microsoft.NETCore.Runtime.CoreCLR/1.0.4": {
+      "sha512": "p6GyBWYa+i/DhTulWizcVRjnZcPtR372kZdcpd+USN/zSwcKcmlq8V+HhC0RJDKb3Hsa2Q8sllDa1LqlhxVmZg==",
       "type": "package",
-      "path": "runtime.win7-x86.microsoft.netcore.runtime.coreclr/1.0.2",
+      "path": "runtime.win7-x86.microsoft.netcore.runtime.coreclr/1.0.4",
       "files": [
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "ref/netstandard1.0/_._",
-        "runtime.win7-x86.microsoft.netcore.runtime.coreclr.1.0.2.nupkg.sha512",
+        "runtime.win7-x86.microsoft.netcore.runtime.coreclr.1.0.4.nupkg.sha512",
         "runtime.win7-x86.microsoft.netcore.runtime.coreclr.nuspec",
         "runtimes/win7-x86-aot/lib/netstandard1.0/_._",
         "runtimes/win7-x86-aot/native/_._",
@@ -13312,15 +13238,15 @@
         "runtimes/win/lib/netstandard1.0/System.Private.Uri.dll"
       ]
     },
-    "runtime.win8-arm.Microsoft.NETCore.Runtime.CoreCLR/1.0.2": {
-      "sha512": "0V6sq7Dg0bQPrJtm/Qw5Zu0e7gidnRPLaqUhKIkLYzVn64jkat+JnR6LcezryD3c0Wuva/MdJWYSAaOPq5V/Zw==",
+    "runtime.win8-arm.Microsoft.NETCore.Runtime.CoreCLR/1.0.4": {
+      "sha512": "LNDjOrymTkELonR7BcUhzsr2oOzsEO2rs+K1fRedp/gheMp+Q18vkLCXjfjL6vQzYSIWgpsHRhIFNfMn17AATA==",
       "type": "package",
-      "path": "runtime.win8-arm.microsoft.netcore.runtime.coreclr/1.0.2",
+      "path": "runtime.win8-arm.microsoft.netcore.runtime.coreclr/1.0.4",
       "files": [
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "ref/netstandard1.0/_._",
-        "runtime.win8-arm.microsoft.netcore.runtime.coreclr.1.0.2.nupkg.sha512",
+        "runtime.win8-arm.microsoft.netcore.runtime.coreclr.1.0.4.nupkg.sha512",
         "runtime.win8-arm.microsoft.netcore.runtime.coreclr.nuspec",
         "runtimes/win8-arm-aot/lib/netstandard1.0/_._",
         "runtimes/win8-arm-aot/native/_._",
@@ -19257,6 +19183,7 @@
       "System.Runtime.Serialization.Xml >= 4.1.1",
       "System.Security.AccessControl >= 4.0.0",
       "System.Security.Claims >= 4.0.1",
+      "System.Security.Cryptography.Cng >= 4.2.0",
       "System.Security.Cryptography.Csp >= 4.0.0",
       "System.Security.Principal >= 4.0.1",
       "System.Security.Principal.Windows >= 4.0.0",
@@ -19282,10 +19209,9 @@
       "System.Xml.XmlSerializer >= 4.0.11"
     ],
     ".NETCoreApp,Version=v1.0": [
-      "Microsoft.NETCore.Runtime.CoreCLR >= 1.0.2",
+      "Microsoft.NETCore.Runtime.CoreCLR >= 1.0.4",
       "Microsoft.NETCore.TestHost >= 1.0.0",
       "System.Runtime.Loader >= 4.0.0",
-      "runtime.win8-arm.Microsoft.NETCore.Runtime.CoreCLR >= 1.0.2",
       "runtime.win8-x64.Microsoft.NETCore.Windows.ApiSets >= 1.0.1",
       "runtime.win8-x86.Microsoft.NETCore.Windows.ApiSets >= 1.0.1"
     ]
