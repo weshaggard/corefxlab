@@ -16,6 +16,8 @@
     <NuGetToolPath Condition="'$(NuGetToolPath)'==''">$(MSBuildThisFileDirectory)\Bin\NuGet.exe</NuGetToolPath>
     <SymChkToolPath Condition="'$(SymChkToolPath)'=='' and Exists('C:\debuggers\symchk.exe')">C:\debuggers\symchk.exe</SymChkToolPath>
     <SymChkToolPath Condition="'$(SymChkToolPath)'==''">$(MSBuildThisFileDirectory)\Bin\symchk.exe</SymChkToolPath>
+
+    <RestoredRefPath Condition="'$(TargetArch)'=='x86'">$(MSbuildThisFileDirectory)RestoredOutput\ref</RestoredRefPath>
   </PropertyGroup>
 
   <Target Name="RestoreLibraryPackages">
@@ -43,6 +45,9 @@
 
     <!-- ResolvedCopyLocalItems corresponds to "runtime" and "native" files in the framework packages -->
     <Copy SourceFiles="@(ResolvedCopyLocalItems)" DestinationFolder="$(RestoredLibrariesPath)" />
+
+    <!-- ResolvedReferences corresponds to library contracts -->
+    <Copy SourceFiles="@(ResolvedReferences)" DestinationFolder="$(RestoredRefPath)" Condition="'$(RestoredRefPath)'!=''" />
 
   </Target>
 
